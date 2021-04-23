@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliker", "Cliker\Cliker.csproj", "{72FF0C8B-123F-4614-BD9F-ACCC95F24C67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72FF0C8B-123F-4614-BD9F-ACCC95F24C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FF0C8B-123F-4614-BD9F-ACCC95F24C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FF0C8B-123F-4614-BD9F-ACCC95F24C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FF0C8B-123F-4614-BD9F-ACCC95F24C67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D8B1803-DE84-4F09-A37B-B02741472C45}
+	EndGlobalSection
+EndGlobal

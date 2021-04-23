@@ -1,0 +1,128 @@
+﻿<Window x:Class="Cliker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cliker"
+        mc:Ignorable="d"
+        Title="Майнер Бот" Height="455" Width="800" Style="{StaticResource wind_default}">
+    <Window.DataContext>
+        <local:MainVM />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Style TargetType="GroupBox" x:Key="GroupFilter">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=CbxFilter, Path=IsChecked}" Value="True">
+                    <Setter Property="IsEnabled" Value="True"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=CbxFilter, Path=IsChecked}" Value="false">
+                    <Setter Property="IsEnabled" Value="False"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <StackPanel>
+                <TextBox MaxLength="20" Margin="5" />
+                <PasswordBox MaxLength="25" Margin="5" />
+                <Button Style="{StaticResource btm_default}">Войти</Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <TextBlock Style="{StaticResource lbl_default}" HorizontalAlignment="Center">Статус входа.</TextBlock>
+                <TextBlock Style="{StaticResource lbl_default}">Имя</TextBlock>
+                <TextBlock Style="{StaticResource lbl_default}">Золото</TextBlock>
+                <TextBlock Style="{StaticResource lbl_default}">Серебро</TextBlock>
+                <Button Style="{StaticResource btm_default}">Обменять</Button>
+                <Button Style="{StaticResource btm_default}" Background="Black" Foreground="Wheat">Старт</Button>
+            </StackPanel>
+        </Grid>
+
+        <!--второй столбец-->
+        <Grid Grid.Column="1" Grid.RowSpan="2">
+            <GroupBox Header="Настройки" Margin="5">
+                <StackPanel Margin="10">
+                    <TextBlock Style="{StaticResource lbl_default}">Периодичность:</TextBlock>
+                    <ComboBox Margin="5" SelectedIndex="0">
+                        <ComboBoxItem>10 минут</ComboBoxItem>
+                        <ComboBoxItem>20 минут</ComboBoxItem>
+                        <ComboBoxItem>30 минут</ComboBoxItem>
+                    </ComboBox>
+
+                    <!--Сливать или не сливать заработанное-->
+                    <GroupBox Header="Майнинг">
+                        <StackPanel>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource lbl_default}">Тратить заработанное</TextBlock>
+                                    <CheckBox Margin="10" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!--Использовать или не использовать фильтр-->
+                    <GroupBox Header="Крипта">
+                        <StackPanel>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource lbl_default}">Использовать фильтр</TextBlock>
+                                    <CheckBox Margin="10" Name="CbxFilter" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!--Настройки фильтра-->
+                    <GroupBox Header="Фильтр" Style="{StaticResource GroupFilter}">
+                        <StackPanel>
+                            <Grid>
+                                <ListView ItemsSource="{Binding FilterItems}" HorizontalContentAlignment="Stretch"
+                                          BorderThickness="0">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="10*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                                                <CheckBox Grid.Column="1" Margin="3" IsChecked="{Binding IsEnable}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!--использовать процессор-->
+                    <GroupBox Header="Импользовать процессор">
+                        <StackPanel>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource lbl_default}">да</TextBlock>
+                                    <CheckBox Margin="10" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>
