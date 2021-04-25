@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using Cliker.FilterResourses;
+    using Cliker.Model.FilterResourses;
 
     /// <summary>
     /// Вьюмодель главного окна

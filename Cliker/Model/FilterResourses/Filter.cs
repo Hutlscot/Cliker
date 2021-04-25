@@ -1,4 +1,4 @@
-﻿namespace Cliker.FilterResourses
+﻿namespace Cliker.Model.FilterResourses
 {
     using System.Collections.Generic;
 
@@ -26,9 +26,9 @@
         private List<FilterItem> InitializeFilterItems()
         {
             var listItems = new List<FilterItem>();
-            listItems.Add(new FilterItem("Первый"));
-            listItems.Add(new FilterItem("Второй"));
-            listItems.Add(new FilterItem("Третий"));
+            listItems.Add(new FilterItem("Обсидиан"));
+            listItems.Add(new FilterItem("Оникс"));
+            listItems.Add(new FilterItem("Графит"));
             return listItems;
         }
 

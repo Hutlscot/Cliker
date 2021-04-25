@@ -1,4 +1,4 @@
-﻿namespace Cliker.FilterResourses
+﻿namespace Cliker.Model.FilterResourses
 {
     /// <summary>
     /// Класс элемента фильтра
