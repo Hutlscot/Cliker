@@ -1,7 +1,10 @@
 ﻿namespace Cliker.Logic
 {
+    using System;
     using System.Collections.Specialized;
+    using System.IO;
     using System.Net;
+    using System.Text;
     using System.Windows;
 
     using Cliker.Model.ValuesForHeaders;
@@ -11,26 +14,28 @@
         private User User { get; set; }
         public void LoginIn()
         {
-            var login = "Testinggg";
-            var pass = "Testinggg";
+            var login = "Мойперс";
+            var pass = "Farcry";
 
             User = new User(login, pass);
-            const string Url = "https://mrush.mobi/welcome";
+            const string Url = "http://tiwar.ru/";
 
-            var reqparm = new NameValueCollection();
-            
+            var data = new NameValueCollection();
 
-            reqparm.Add("name", login);
-            reqparm.Add("Password", pass);
+
+            data.Add("name", login);
+            data.Add("Password", pass);
             using (var client = RequestWorker.GetClient())
             {
-                var response = client.DownloadString(Url);
+                client.Headers.Set("Content-Length", "60");
+                client.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+                var result = client.UploadValues(Url, "POST", data);
+                var header = client.ResponseHeaders;
+                var s = Encoding.UTF8.GetString(result);
 
-                var headers = client.ResponseHeaders["Set-Cookie"];
+                MessageBox.Show(s);
+                MessageBox.Show(header.ToString());
 
-                MessageBox.Show(headers);
-                MessageBox.Show(response);
-               
             }
 
            

@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// получить клиент для запросов
+        /// получить клиента для запросов
         /// </summary>
         /// <returns></returns>
         public static WebClient GetClient()
@@ -51,16 +51,9 @@
         private static void SetHeaders(this WebClient client)
         {
             client.Headers.Add(HttpRequestHeader.Accept, ValuesForHeaders.Accept);
-            client.Headers.Add(HttpRequestHeader.AcceptEncoding, ValuesForHeaders.Accept_Encoding);
             client.Headers.Add(HttpRequestHeader.AcceptLanguage, ValuesForHeaders.Accept_Language);
             client.Headers.Add(HttpRequestHeader.CacheControl, ValuesForHeaders.Cache_Control);
             client.Headers.Add(HttpRequestHeader.Host, ValuesForHeaders.Host);
-            client.Headers.Add("sec-ch-ua", ValuesForHeaders.Sec_Ch_UA);
-            client.Headers.Add("sec-ch-ua-mobile", ValuesForHeaders.Sec_Ch_UA_Modile);
-            client.Headers.Add("Sec-Fetch-Dest", ValuesForHeaders.Sec_Fetch_Dest);
-            client.Headers.Add("Sec-Fetch-Mode", ValuesForHeaders.Sec_Fetch_Mode);
-            client.Headers.Add("Sec-Fetch-Site", ValuesForHeaders.Sec_Fetch_Site);
-            client.Headers.Add("Sec-Fetch-User", ValuesForHeaders.Sec_Fetch_User);
             client.Headers.Add("Upgrade-Insecure-Requests", ValuesForHeaders.Upgrade_Insecure_Requests);
             client.Headers.Add(HttpRequestHeader.UserAgent, ValuesForHeaders.UserAgent);
         }
@@ -74,10 +67,14 @@
             client.Headers.Add(HttpRequestHeader.Cookie, _cookie);   
         }
 
+        /// <summary>
+        /// задать стандартные куки для всех запросов
+        /// </summary>
+        /// <param name="client">веб клиент</param>
         private static void GetCookie(WebClientCookies client)
         {
-            _cookie += client.ResponseCookies["uidc"]+"; ";
-            _cookie += client.ResponseCookies["PHPSESSID"] + ";";
+            _cookie += client.ResponseCookies["PHPSESSID"] + "; ";
+            _cookie += "_ym_uid=161978143880128752; _ym_d=1619781438; _ym_isad=2; _ym_visorc=w";
         }
     }
 }
