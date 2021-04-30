@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 
 namespace Cliker
 {
+    using Cliker.Logic;
+
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -23,6 +25,12 @@ namespace Cliker
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var auth = new Authorization();
+            auth.LoginIn();
         }
     }
 }

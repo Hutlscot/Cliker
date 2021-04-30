@@ -64,6 +64,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Logic\Authorization.cs" />
+    <Compile Include="Logic\WebClientCookies.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logic\RequestWorker.cs" />
+    <Compile Include="Logic\User.cs" />
+    <Compile Include="Model\Links.cs" />
+    <Compile Include="Model\ValuesForHeaders\ValuesForHeaders.cs" />
     <Compile Include="Model\FilterResourses\Filter.cs" />
     <Compile Include="Model\FilterResourses\FilterItem.cs" />
     <Compile Include="View\Main.xaml.cs">

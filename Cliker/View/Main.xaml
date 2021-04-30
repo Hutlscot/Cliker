@@ -40,7 +40,7 @@
             <StackPanel>
                 <TextBox Style="{StaticResource txt_default}" MaxLength="20" Margin="5" />
                 <PasswordBox Style="{StaticResource pass_default}" MaxLength="25" Margin="5" />
-                <Button Style="{StaticResource btm_default}">Войти</Button>
+                <Button Click="Button_Click" Style="{StaticResource btm_default}">Войти</Button>
             </StackPanel>
         </Grid>
 
