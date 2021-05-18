@@ -4,52 +4,52 @@
              xmlns:local="clr-namespace:Cliker"
              StartupUri="View\Main.xaml">
     <Application.Resources>
-        
+
         <Style TargetType="Button" x:Key="btm_default">
-            <Setter Property="Margin" Value="5"></Setter>
-            <Setter Property="Width" Value="150"></Setter>
-            <Setter Property="Height" Value="25"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="Red" />
         </Style>
-        
+
         <Style TargetType="Window" x:Key="wind_default">
-            <Setter Property="FontSize" Value="15"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="Foreground" Value="OrangeRed"></Setter>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="OrangeRed" />
         </Style>
-        
+
         <Style TargetType="TextBlock" x:Key="lbl_default">
-            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Margin" Value="5" />
         </Style>
-        
+
         <Style TargetType="TextBlock" x:Key="lbl_header">
-            <Setter Property="Margin" Value="5"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
-        
+
         <Style TargetType="TextBox" x:Key="txt_log">
-            <Setter Property="TextWrapping" Value="Wrap"></Setter>
-            <Setter Property="MinLines" Value="5"></Setter>
-            <Setter Property="MaxLines" Value="5"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="Foreground" Value="GreenYellow"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="MinLines" Value="5" />
+            <Setter Property="MaxLines" Value="5" />
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="GreenYellow" />
         </Style>
-        
+
         <Style TargetType="TextBox" x:Key="txt_default">
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="Foreground" Value="GreenYellow"></Setter>
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="GreenYellow" />
         </Style>
-        
+
         <Style TargetType="PasswordBox" x:Key="pass_default">
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="Foreground" Value="GreenYellow"></Setter>
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="GreenYellow" />
         </Style>
 
         <Style TargetType="Border" x:Key="border_default">
-            <Setter Property="BorderBrush" Value="Red"></Setter>
-            <Setter Property="BorderThickness" Value="1"></Setter>
-            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="BorderBrush" Value="Red" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Margin" Value="5" />
         </Style>
 
     </Application.Resources>

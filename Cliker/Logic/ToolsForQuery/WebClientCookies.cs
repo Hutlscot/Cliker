@@ -8,10 +8,11 @@
         public WebClientCookies()
         {
             CookieContainer = new CookieContainer();
-            this.ResponseCookies = new CookieCollection();
+            ResponseCookies = new CookieCollection();
         }
 
-        private CookieContainer CookieContainer { get; set; }
+        private CookieContainer CookieContainer { get; }
+
         public CookieCollection ResponseCookies { get; set; }
 
         protected override WebRequest GetWebRequest(Uri address)
@@ -24,7 +25,7 @@
         protected override WebResponse GetWebResponse(WebRequest request)
         {
             var response = (HttpWebResponse)base.GetWebResponse(request);
-            this.ResponseCookies = response.Cookies;
+            ResponseCookies = response.Cookies;
             return response;
         }
     }

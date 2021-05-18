@@ -1,17 +1,20 @@
 ﻿namespace Cliker.Logic
 {
-    using System;
     using System.Collections.Specialized;
-    using System.IO;
-    using System.Net;
     using System.Text;
     using System.Windows;
 
-    using Cliker.Model.ValuesForHeaders;
+    using Cliker.Logic.ToolsForQuery;
+    using Cliker.Model;
 
+    /// <summary>
+    /// класс для авторизации
+    /// еще не рабочий
+    /// </summary>
     public class Authorization
     {
         private User User { get; set; }
+
         public void LoginIn()
         {
             var login = "Мойперс";
@@ -21,7 +24,6 @@
             const string Url = "http://tiwar.ru/";
 
             var data = new NameValueCollection();
-
 
             data.Add("name", login);
             data.Add("Password", pass);
@@ -35,10 +37,7 @@
 
                 MessageBox.Show(s);
                 MessageBox.Show(header.ToString());
-
             }
-
-           
         }
     }
 }

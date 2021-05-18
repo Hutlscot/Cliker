@@ -15,10 +15,10 @@
         <Style TargetType="ListView" x:Key="Filter">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding ElementName=CbxFilter, Path=IsChecked}" Value="True">
-                    <Setter Property="IsEnabled" Value="True"></Setter>
+                    <Setter Property="IsEnabled" Value="True" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding ElementName=CbxFilter, Path=IsChecked}" Value="false">
-                    <Setter Property="IsEnabled" Value="False"></Setter>
+                    <Setter Property="IsEnabled" Value="False" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -34,13 +34,13 @@
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="8*" />
         </Grid.ColumnDefinitions>
-        
+
         <!--авторизация-->
         <Grid Margin="10">
             <StackPanel>
                 <TextBox Style="{StaticResource txt_default}" MaxLength="20" Margin="5" />
                 <PasswordBox Style="{StaticResource pass_default}" MaxLength="25" Margin="5" />
-                <Button Click="Button_Click" Style="{StaticResource btm_default}">Войти</Button>
+                <Button Command="{Binding LoginCommand}" Style="{StaticResource btm_default}">Войти</Button>
             </StackPanel>
         </Grid>
 
@@ -63,7 +63,7 @@
             <Border Style="{StaticResource border_default}">
                 <StackPanel Margin="10">
                     <TextBlock Style="{StaticResource lbl_header}">Настройки</TextBlock>
-                    
+
                     <!--периодичность-->
                     <TextBlock>Периодичность:</TextBlock>
                     <ComboBox Margin="5" SelectedIndex="0">
@@ -89,7 +89,7 @@
                         <Grid>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource lbl_default}">Использовать фильтр</TextBlock>
-                                <CheckBox Margin="10" Name="CbxFilter" IsChecked="True"/>
+                                <CheckBox Margin="10" Name="CbxFilter" IsChecked="True" />
                             </StackPanel>
                         </Grid>
                     </StackPanel>
@@ -99,7 +99,8 @@
                         <TextBlock>Фильтр пещеры:</TextBlock>
                         <Border Style="{StaticResource border_default}">
                             <Grid>
-                                <ListView Background="Black" Foreground="IndianRed" ItemsSource="{Binding FilterItems}" HorizontalContentAlignment="Stretch"
+                                <ListView Background="Black" Foreground="IndianRed" ItemsSource="{Binding FilterItems}"
+                                          HorizontalContentAlignment="Stretch"
                                           BorderThickness="0" Style="{StaticResource Filter}">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
@@ -137,24 +138,23 @@
             <Border Style="{StaticResource border_default}">
                 <StackPanel Margin="10">
                     <TextBlock Style="{StaticResource lbl_header}">Логер</TextBlock>
-                    
+
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Style="{StaticResource lbl_default}">Арена:</TextBlock>
                             <TextBlock Style="{StaticResource lbl_default}" Foreground="Wheat">{кол-во атак} {Exp} {Серебро}</TextBlock>
                         </StackPanel>
-                        <TextBox Style="{StaticResource txt_log}"></TextBox>
+                        <TextBox Style="{StaticResource txt_log}" />
                     </StackPanel>
-                    
+
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Style="{StaticResource lbl_default}">Пещера:</TextBlock>
                             <TextBlock Style="{StaticResource lbl_default}" Foreground="Wheat">Обсид.-{кол.}, оникс -{кол.}, графит -{кол.}</TextBlock>
                         </StackPanel>
-                        <TextBox Style="{StaticResource txt_log}">
-                        </TextBox>
+                        <TextBox Style="{StaticResource txt_log}" />
                     </StackPanel>
-                    
+
                     <StackPanel>
                         <TextBlock>Лог клан. монстра</TextBlock>
                         <TextBlock Style="{StaticResource lbl_default}" Foreground="Wheat">Общее кол-во урона</TextBlock>

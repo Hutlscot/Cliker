@@ -21,6 +21,15 @@
         }
 
         /// <summary>
+        /// Получить элементы фильтра
+        /// </summary>
+        /// <returns>Список элементов фильтра</returns>
+        public List<FilterItem> GetFilterItems()
+        {
+            return Items;
+        }
+
+        /// <summary>
         /// Создать элементы фильтра
         /// </summary>
         private List<FilterItem> InitializeFilterItems()
@@ -30,15 +39,6 @@
             listItems.Add(new FilterItem("Оникс"));
             listItems.Add(new FilterItem("Графит"));
             return listItems;
-        }
-
-        /// <summary>
-        /// Получить элементы фильтра
-        /// </summary>
-        /// <returns>Список элементов фильтра</returns>
-        public List<FilterItem> GetFilterItems()
-        {
-            return Items;
         }
     }
 }

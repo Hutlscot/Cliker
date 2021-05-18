@@ -1,4 +1,4 @@
-﻿namespace Cliker.Logic
+﻿namespace Cliker.Logic.ToolsForQuery
 {
     using System.Net;
 
@@ -45,6 +45,25 @@
         }
 
         /// <summary>
+        /// задать стандартные куки для всех запросов
+        /// </summary>
+        /// <param name="client">веб клиент</param>
+        private static void GetCookie(WebClientCookies client)
+        {
+            _cookie += client.ResponseCookies["PHPSESSID"] + "; ";
+            _cookie += "_ym_uid=161978143880128752; _ym_d=1619781438; _ym_isad=2; _ym_visorc=w";
+        }
+
+        /// <summary>
+        /// добавить куки в запрос
+        /// </summary>
+        /// <param name="client">веб клиент</param>
+        private static void SetCookie(this WebClient client)
+        {
+            client.Headers.Add(HttpRequestHeader.Cookie, _cookie);
+        }
+
+        /// <summary>
         /// добавить заголовки в запрос
         /// </summary>
         /// <param name="client">веб клиент</param>
@@ -56,25 +75,6 @@
             client.Headers.Add(HttpRequestHeader.Host, ValuesForHeaders.Host);
             client.Headers.Add("Upgrade-Insecure-Requests", ValuesForHeaders.Upgrade_Insecure_Requests);
             client.Headers.Add(HttpRequestHeader.UserAgent, ValuesForHeaders.UserAgent);
-        }
-
-        /// <summary>
-        /// добавить куки в запрос
-        /// </summary>
-        /// <param name="client">веб клиент</param>
-        private static void SetCookie(this WebClient client)
-        {
-            client.Headers.Add(HttpRequestHeader.Cookie, _cookie);   
-        }
-
-        /// <summary>
-        /// задать стандартные куки для всех запросов
-        /// </summary>
-        /// <param name="client">веб клиент</param>
-        private static void GetCookie(WebClientCookies client)
-        {
-            _cookie += client.ResponseCookies["PHPSESSID"] + "; ";
-            _cookie += "_ym_uid=161978143880128752; _ym_d=1619781438; _ym_isad=2; _ym_visorc=w";
         }
     }
 }

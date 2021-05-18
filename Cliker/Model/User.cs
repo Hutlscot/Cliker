@@ -1,4 +1,4 @@
-﻿namespace Cliker.Logic
+﻿namespace Cliker.Model
 {
     /// <summary>
     /// класс пользователя
