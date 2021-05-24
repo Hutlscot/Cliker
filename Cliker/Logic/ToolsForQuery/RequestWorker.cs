@@ -2,8 +2,8 @@
 {
     using System.Net;
 
-    using Cliker.Model;
-    using Cliker.Model.ValuesForHeaders;
+    using global::Cliker.Model;
+    using global::Cliker.Model.ValuesForHeaders;
 
     /// <summary>
     /// инстурумент для выполнения запросов
@@ -23,9 +23,9 @@
             using (var client = new WebClientCookies())
             {
                 client.SetHeaders();
-                client.DownloadString(Links.Home);
+                var response = client.DownloadString(Links.Home);
 
-                GetCookie(client);
+                SetCookie(client);
             }
         }
 
@@ -48,9 +48,10 @@
         /// задать стандартные куки для всех запросов
         /// </summary>
         /// <param name="client">веб клиент</param>
-        private static void GetCookie(WebClientCookies client)
+        private static void SetCookie(WebClientCookies client)
         {
-            _cookie += client.ResponseCookies["PHPSESSID"] + "; ";
+            //_cookie += client.ResponseCookies["PHPSESSID"] + "; ";
+            _cookie += "PHPSESSID=175b66d1f19afba0a614725ed31240e9;";
             _cookie += "_ym_uid=161978143880128752; _ym_d=1619781438; _ym_isad=2; _ym_visorc=w";
         }
 

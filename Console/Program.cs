@@ -7,12 +7,17 @@ using Cliker.Logic;
 
 namespace Console
 {
+    using Cliker.Logic.ToolsForQuery;
+    using Cliker.Logic.Utility;
+
     class Program
     {
         static void Main(string[] args)
         {
-            var auth = new Authorization();
-            auth.LoginIn();
+            using (var client = RequestWorker.GetClient())
+            {
+                WorkerUtils.CheckHealth(client);
+            }
         }
     }
 }

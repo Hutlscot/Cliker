@@ -4,8 +4,8 @@
     using System.Text;
     using System.Windows;
 
-    using Cliker.Logic.ToolsForQuery;
-    using Cliker.Model;
+    using global::Cliker.Logic.ToolsForQuery;
+    using global::Cliker.Model;
 
     /// <summary>
     /// класс для авторизации

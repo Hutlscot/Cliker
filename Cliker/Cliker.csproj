@@ -64,12 +64,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Logic\Loggers\ArenaLogger.cs" />
+    <Compile Include="Logic\WorkerUtils\WorkerUtils.cs" />
+    <Compile Include="Logic\Workers\CaveWorker.cs" />
+    <Compile Include="Logic\Workers\ArenaWorker.cs" />
     <Compile Include="Logic\Authorization.cs" />
+    <Compile Include="Logic\Cliker.cs" />
     <Compile Include="Logic\Command\MainCommand.cs" />
+    <Compile Include="Logic\Workers\MonsterWorker.cs" />
+    <Compile Include="Logic\Parser\TiwarParser.cs" />
     <Compile Include="Logic\ToolsForQuery\WebClientCookies.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Logic\ToolsForQuery\RequestWorker.cs" />
+    <Compile Include="Logic\Workers\WalkWorker.cs" />
+    <Compile Include="Model\PeriodForArena.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Links.cs" />
     <Compile Include="Model\ValuesForHeaders\ValuesForHeaders.cs" />
@@ -108,5 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="AngleSharp">
+      <Version>0.15.0</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
