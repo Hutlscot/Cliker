@@ -1,4 +1,4 @@
-﻿namespace Cliker.Logic.Command
+﻿namespace UI.Command
 {
     using System;
     using System.Windows.Input;

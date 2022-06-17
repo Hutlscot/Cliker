@@ -1,11 +1,10 @@
-﻿namespace Cliker.Logic
+﻿namespace BL
 {
     using System.Collections.Specialized;
     using System.Text;
     using System.Windows;
 
-    using global::Cliker.Logic.ToolsForQuery;
-    using global::Cliker.Model;
+    using UI.Model;
 
     /// <summary>
     /// класс для авторизации
@@ -27,7 +26,7 @@
 
             data.Add("name", login);
             data.Add("Password", pass);
-            using (var client = RequestWorker.GetClient())
+            using (var client = new System.Net.WebClient())
             {
                 client.Headers.Set("Content-Length", "60");
                 client.Headers.Add("Content-Type", "application/x-www-form-urlencoded");

@@ -1,20 +1,11 @@
-﻿namespace Cliker
+﻿namespace UI.ViewModel
 {
     using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Text;
-    using System.Threading;
     using System.Windows;
 
-    using AngleSharp.Html.Parser;
-
-    using Cliker.Logic;
-    using Cliker.Logic.Command;
-    using Cliker.Logic.Loggers;
-    using Cliker.Logic.Parser;
-    using Cliker.Logic.ToolsForQuery;
-    using Cliker.Model;
-    using Cliker.Model.FilterResourses;
+    using UI.Command;
+    using UI.Model;
+    using UI.Model.FilterResourses;
 
     /// <summary>
     /// Вьюмодель главного окна
@@ -22,31 +13,17 @@
     public class MainVM
     {
         /// <summary>
-        /// Сам кликер
-        /// </summary>
-        private readonly Cliker _cliker;
-
-        public ArenaLogger ArenaLogger { get; set; }
-
-        /// <summary>
-        /// Список элементов фильтра
-        /// </summary>
-        public List<FilterItem> FilterItems { get; set; }
-
-        /// <summary>
-        /// Список доступных периодов
-        /// </summary>
-        public List<PeriodForArena> Periods { get; set; } = new List<PeriodForArena>();
-
-        /// <summary>
         /// Инициализация VM
         /// </summary>
         public MainVM()
         {
             LoadDataOnForm();
-            _cliker = new Cliker();
-            ArenaLogger = new ArenaLogger();
         }
+
+        /// <summary>
+        /// Список элементов фильтра
+        /// </summary>
+        public List<FilterItem> FilterItems { get; set; }
 
         /// <summary>
         /// Команда авторизации
@@ -58,11 +35,16 @@
                 return new MainCommand(
                     obj =>
                     {
-                        Process.Start(Links.Home);
+                        //Process.Start(Links.HOME);
                         MessageBox.Show("Выполните вход в браузере\nвход здесь пока не реализован");
                     });
             }
         }
+
+        /// <summary>
+        /// Список доступных периодов
+        /// </summary>
+        public List<PeriodForArena> Periods { get; set; } = new List<PeriodForArena>();
 
         /// <summary>
         /// Команда начала работы кликера
@@ -74,7 +56,7 @@
                 return new MainCommand(
                     obj =>
                     {
-                        _cliker.Start(obj as PeriodForArena, ArenaLogger);
+                        //_cliker.Start(obj as PeriodForArena);
                     });
             }
         }
@@ -86,7 +68,7 @@
                 return new MainCommand(
                     obj =>
                     {
-                        _cliker.Stop();
+                        //_cliker.Stop();
                     });
             }
         }

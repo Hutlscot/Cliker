@@ -1,4 +1,4 @@
-﻿namespace Cliker.Model.ValuesForHeaders
+﻿namespace UI.Model.ValuesForHeaders
 {
     /// <summary>
     /// значения заголовков для запроса

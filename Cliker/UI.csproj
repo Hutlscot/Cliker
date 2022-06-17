@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{72FF0C8B-123F-4614-BD9F-ACCC95F24C67}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Cliker</RootNamespace>
-    <AssemblyName>Cliker</AssemblyName>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -64,23 +64,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Logic\Loggers\ArenaLogger.cs" />
-    <Compile Include="Logic\WorkerUtils\WorkerUtils.cs" />
-    <Compile Include="Logic\Workers\CaveWorker.cs" />
-    <Compile Include="Logic\Workers\ArenaWorker.cs" />
-    <Compile Include="Logic\Authorization.cs" />
-    <Compile Include="Logic\Cliker.cs" />
-    <Compile Include="Logic\Command\MainCommand.cs" />
-    <Compile Include="Logic\Workers\MonsterWorker.cs" />
-    <Compile Include="Logic\Parser\TiwarParser.cs" />
-    <Compile Include="Logic\ToolsForQuery\WebClientCookies.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Logic\ToolsForQuery\RequestWorker.cs" />
-    <Compile Include="Logic\Workers\WalkWorker.cs" />
+    <Compile Include="Command\MainCommand.cs" />
     <Compile Include="Model\PeriodForArena.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Links.cs" />
     <Compile Include="Model\ValuesForHeaders\ValuesForHeaders.cs" />
     <Compile Include="Model\FilterResourses\Filter.cs" />
     <Compile Include="Model\FilterResourses\FilterItem.cs" />
@@ -90,7 +76,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VIewModel\MainVM.cs" />
+    <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

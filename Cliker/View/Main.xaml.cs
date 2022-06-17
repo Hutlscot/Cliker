@@ -1,4 +1,4 @@
-﻿namespace Cliker
+﻿namespace UI.View
 {
     using System.Windows;
 

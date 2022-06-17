@@ -1,4 +1,4 @@
-﻿namespace Cliker.Model
+﻿namespace UI.Model
 {
     /// <summary>
     /// класс пользователя
@@ -18,8 +18,8 @@
         /// <summary>
         /// создание пользователя
         /// </summary>
-        /// <param name="login">логин</param>
-        /// <param name="pass">пароль</param>
+        /// <param name="login"> логин </param>
+        /// <param name="pass"> пароль </param>
         public User(string login, string pass)
         {
             _login = login;

@@ -1,15 +1,15 @@
-﻿namespace Cliker.Logic.Utility
+﻿namespace BL.Workers
 {
     using System.Linq;
     using System.Net;
     using System.Text;
     using System.Threading;
-    using System.Windows;
 
     using AngleSharp.Html.Parser;
 
-    using global::Cliker.Logic.Parser;
-    using global::Cliker.Model;
+    using BL.Parser;
+
+    using UI.Model;
 
     /// <summary>
     /// Класс работникам
@@ -19,13 +19,13 @@
         /// <summary>
         /// Метод проверки здоровья
         /// </summary>
-        /// <returns>true если хватает, false если не хватает</returns>
+        /// <returns> true если хватает, false если не хватает </returns>
         public static bool CheckHealth(WebClient client)
         {
             var parser = new TiwarParser();
             var domParser = new HtmlParser();
 
-            var response = Encoding.UTF8.GetString(client.DownloadData(Links.Arena));
+            var response = Encoding.UTF8.GetString(client.DownloadData(Links.ARENA));
             var document = domParser.ParseDocumentAsync(response, new CancellationToken());
 
             var result = parser.FindHealthValue(document.Result).FirstOrDefault();
@@ -35,7 +35,7 @@
         /// <summary>
         /// Метод проверки маны
         /// </summary>
-        /// <returns>true если хватает, false если не хватает</returns>
+        /// <returns> true если хватает, false если не хватает </returns>
         public static bool CheckMana(WebClient client)
         {
             return true;

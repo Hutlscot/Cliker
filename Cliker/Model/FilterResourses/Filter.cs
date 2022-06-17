@@ -1,4 +1,4 @@
-﻿namespace Cliker.Model.FilterResourses
+﻿namespace UI.Model.FilterResourses
 {
     using System.Collections.Generic;
 
@@ -23,7 +23,7 @@
         /// <summary>
         /// Получить элементы фильтра
         /// </summary>
-        /// <returns>Список элементов фильтра</returns>
+        /// <returns> Список элементов фильтра </returns>
         public List<FilterItem> GetFilterItems()
         {
             return Items;

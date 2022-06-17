@@ -1,4 +1,4 @@
-﻿namespace Cliker.Logic
+﻿namespace BL.WebClient
 {
     using System;
     using System.Net;
